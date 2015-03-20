@@ -244,6 +244,7 @@ class LexFrame extends JFrame implements ActionListener{
 				// 基于Kasiski的暴力破解
 				KasiskiDecoding kasiskiDecoding = new KasiskiDecoding(ta_encoding.getText());
 				kasiskiDecoding.getResult();
+				System.out.println("kasiski算法预测："+kasiskiDecoding.getMaxDivisor());
 				
 				// 基于重合指数暴力破解
 				VigenereDecoding decode = new VigenereDecoding(ta_encoding.getText(), ta_decoding);

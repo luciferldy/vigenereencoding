@@ -131,18 +131,18 @@ public class VigenereDecoding {
 	    for (int i = 0; i < pLetter.length; i++) {
 			letterCount += pLetter[i];
 		}
-	    System.out.println("字母数量： "+letterCount);
+	    System.out.print("字母数量： "+letterCount);
 	    // 计算重合指数
 	    float pIC = 0;
 	    for (int i = 0; i < pLetter.length; i++) {
-	    	System.out.println("密文的字母频率："+(char)('a'+i)+" "+pLetter[i]*1.0/letterCount);
+//	    	System.out.println("密文的字母频率："+(char)('a'+i)+" "+pLetter[i]*1.0/letterCount);
 			pIC += (float) ((pLetter[i]*1.0/letterCount)*(pLetter[i]*1.0/letterCount));
 		}
 	    // 取小数点后两位
 //	    BigDecimal b = new BigDecimal(pIC);
 //	    pIC = b.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
 	    // 判断是否正确
-	    System.out.println(pIC);
+	    System.out.println(" 段的重合指数："+pIC);
 	    pIC = (float)0.065-pIC;
 	    if (pIC > -0.01 && pIC < 0.01) {
 			return true;
